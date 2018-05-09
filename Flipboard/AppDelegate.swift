@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    configureAppearance()
     // Override point for customization after application launch.
     return true
   }
@@ -87,6 +88,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
           }
       }
+  }
+  
+  // MARK: Appearance
+  func configureAppearance() {
+    UITabBar.appearance().tintColor = UIColor.white
+    
+    // FIXME: Does not work properly
+    UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: UIColor.red, size: CGSize(width:(self.window?.frame.size.width)!/4,height: 49), lineSize: CGSize(width:(self.window?.frame.size.width)!/4, height:2))
+
+    
+  }
+  
+  func getImageWithColorPosition(color: UIColor, size: CGSize, lineSize: CGSize) -> UIImage {
+    // FIXME: Does not work properly
+    let rect = CGRect(x:0, y: 0, width: size.width, height: size.height)
+    let rectLine = CGRect(x:0, y:size.height-lineSize.height,width: lineSize.width,height: lineSize.height)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    UIColor.clear.setFill()
+    UIRectFill(rect)
+    color.setFill()
+    UIRectFill(rectLine)
+    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return image
   }
 
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oXY-vR-9dw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4DX-P5-0JS">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="oXY-vR-9dw" customClass="ViewController" customModule="Flipboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DpO-Xc-XM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-eN-WxY">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem image="home-icon" id="jsd-O8-DqP"/>
+                                    <tabBarItem image="four-squares" id="qdp-G4-dJx"/>
+                                    <tabBarItem title="" image="magnifying-glass" id="0H4-5k-eSY"/>
+                                    <tabBarItem title="" image="caption" id="11X-HC-udN"/>
+                                    <tabBarItem title="" image="person" id="7x1-2f-aDd"/>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KB0-eN-WxY" firstAttribute="bottom" secondItem="3Vs-Wp-GnA" secondAttribute="bottom" id="FQI-43-L2P"/>
+                            <constraint firstAttribute="trailing" secondItem="KB0-eN-WxY" secondAttribute="trailing" id="ImH-zF-zqh"/>
+                            <constraint firstItem="KB0-eN-WxY" firstAttribute="leading" secondItem="DpO-Xc-XM0" secondAttribute="leading" id="eI4-Mu-pf1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Vs-Wp-GnA"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="exploreButton" destination="0H4-5k-eSY" id="90K-iB-Ux9"/>
+                        <outlet property="followingButton" destination="qdp-G4-dJx" id="fi2-rz-gsY"/>
+                        <outlet property="homeButton" destination="jsd-O8-DqP" id="hTO-Ep-9x5"/>
+                        <outlet property="notificationButton" destination="11X-HC-udN" id="nwP-sH-Jkw"/>
+                        <outlet property="profileButton" destination="7x1-2f-aDd" id="GuW-T9-c7j"/>
+                        <outlet property="tabBar" destination="KB0-eN-WxY" id="9hE-Bv-6JP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eX5-QE-7X3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="2252"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="caption" width="36" height="36"/>
+        <image name="four-squares" width="36" height="36"/>
+        <image name="home-icon" width="35" height="35"/>
+        <image name="magnifying-glass" width="36" height="36"/>
+        <image name="person" width="36" height="36"/>
+    </resources>
+</document>

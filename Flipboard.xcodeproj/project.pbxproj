@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5512F77B20A322D100B0CF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F77A20A322D100B0CF76 /* AppDelegate.swift */; };
-		5512F77D20A322D100B0CF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F77C20A322D100B0CF76 /* ViewController.swift */; };
 		5512F78020A322D100B0CF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5512F77E20A322D100B0CF76 /* Main.storyboard */; };
 		5512F78320A322D100B0CF76 /* Flipboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5512F78120A322D100B0CF76 /* Flipboard.xcdatamodeld */; };
 		5512F78520A322D200B0CF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5512F78420A322D200B0CF76 /* Assets.xcassets */; };
 		5512F78820A322D200B0CF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */; };
 		5512F79320A322D200B0CF76 /* FlipboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F79220A322D200B0CF76 /* FlipboardTests.swift */; };
 		5512F79E20A322D200B0CF76 /* FlipboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F79D20A322D200B0CF76 /* FlipboardUITests.swift */; };
+		559B119F20A36C06000011B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B119E20A36C06000011B8 /* ViewController.swift */; };
+		559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A320A39B9B000011B8 /* DataFactory.swift */; };
+		559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A520A39BE2000011B8 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		5512F77720A322D100B0CF76 /* Flipboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flipboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5512F77A20A322D100B0CF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5512F77C20A322D100B0CF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5512F77F20A322D100B0CF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5512F78220A322D100B0CF76 /* Flipboard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flipboard.xcdatamodel; sourceTree = "<group>"; };
 		5512F78420A322D200B0CF76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		5512F79D20A322D200B0CF76 /* FlipboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipboardUITests.swift; sourceTree = "<group>"; };
 		5512F79F20A322D200B0CF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5512F7AB20A3235D00B0CF76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		559B119E20A36C06000011B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		559B11A320A39B9B000011B8 /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
+		559B11A520A39BE2000011B8 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,12 @@
 		5512F77920A322D100B0CF76 /* Flipboard */ = {
 			isa = PBXGroup;
 			children = (
-				5512F77A20A322D100B0CF76 /* AppDelegate.swift */,
-				5512F77C20A322D100B0CF76 /* ViewController.swift */,
-				5512F77E20A322D100B0CF76 /* Main.storyboard */,
 				5512F7AB20A3235D00B0CF76 /* README.md */,
+				5512F77A20A322D100B0CF76 /* AppDelegate.swift */,
+				559B11A220A39B3F000011B8 /* Model */,
+				559B11A120A39B35000011B8 /* View */,
+				559B11A020A39B2E000011B8 /* Controller */,
 				5512F78420A322D200B0CF76 /* Assets.xcassets */,
-				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
 				5512F78920A322D200B0CF76 /* Info.plist */,
 				5512F78120A322D100B0CF76 /* Flipboard.xcdatamodeld */,
 			);
@@ -128,6 +132,32 @@
 				5512F79F20A322D200B0CF76 /* Info.plist */,
 			);
 			path = FlipboardUITests;
+			sourceTree = "<group>";
+		};
+		559B11A020A39B2E000011B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				559B119E20A36C06000011B8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		559B11A120A39B35000011B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
+				5512F77E20A322D100B0CF76 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		559B11A220A39B3F000011B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				559B11A320A39B9B000011B8 /* DataFactory.swift */,
+				559B11A520A39BE2000011B8 /* Int+Extension.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5512F77D20A322D100B0CF76 /* ViewController.swift in Sources */,
+				559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */,
+				559B119F20A36C06000011B8 /* ViewController.swift in Sources */,
 				5512F77B20A322D100B0CF76 /* AppDelegate.swift in Sources */,
+				559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */,
 				5512F78320A322D100B0CF76 /* Flipboard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
