@@ -49,6 +49,7 @@
 		5512F79920A322D200B0CF76 /* FlipboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlipboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5512F79D20A322D200B0CF76 /* FlipboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipboardUITests.swift; sourceTree = "<group>"; };
 		5512F79F20A322D200B0CF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5512F7AB20A3235D00B0CF76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 				5512F77A20A322D100B0CF76 /* AppDelegate.swift */,
 				5512F77C20A322D100B0CF76 /* ViewController.swift */,
 				5512F77E20A322D100B0CF76 /* Main.storyboard */,
+				5512F7AB20A3235D00B0CF76 /* README.md */,
 				5512F78420A322D200B0CF76 /* Assets.xcassets */,
 				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
 				5512F78920A322D200B0CF76 /* Info.plist */,
