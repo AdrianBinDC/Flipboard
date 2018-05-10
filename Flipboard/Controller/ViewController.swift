@@ -32,9 +32,30 @@ class ViewController: UIViewController {
     tabBar.delegate = self
     tabBar.selectedItem = homeButton
     
+    // compute screen width to determine offset of UITabBar
+    let screenSize = self.view.bounds
+    
+    [homeButton, followingButton, exploreButton, notificationButton, profileButton].forEach { tabBarItem in
+      // screen dimensions of iPhone X
+      if screenSize.width == 375 && screenSize.height == 812 {
+        // FIXME: displays icorrectly on iPhone X
+        // could be icon size or could be bug, diagnose to determine which
+        tabBarItem?.imageInsets = UIEdgeInsetsMake(18, 0, 0, 0)
+      }
+      // non-iPhone X
+      else {
+        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
+      }
+    }
+    
     // populate data source
     let dataFactory = DataFactory()
     dataSource = dataFactory.generateData()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    self.tabBar.invalidateIntrinsicContentSize()
   }
   
   // MARK: IBActions

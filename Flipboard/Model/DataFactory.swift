@@ -15,7 +15,7 @@ struct NewsCategory {
 
 class DataFactory: NSObject {
   
-  let categoryList = ["news", "business", "technology", "sports", "politics", "conservative view", "liberal view", "science", "celebrity news", "recipes", "skateboarding", "design", "fashion", "computer science", "photography", "weather", "healthy eating", "women's news", "beauty", "mindfulness", "world economy", "sustainability", "street art", "music", "music festivals", "tv", "movies", "cool stuff", "workouts", "home", "classical music", "fortune 500", "gaming"]
+  private let categoryList = ["news", "business", "technology", "sports", "politics", "conservative view", "liberal view", "science", "celebrity news", "recipes", "skateboarding", "design", "fashion", "computer science", "photography", "weather", "healthy eating", "women's news", "beauty", "mindfulness", "world economy", "sustainability", "street art", "music", "music festivals", "tv", "movies", "cool stuff", "workouts", "home", "classical music", "fortune 500", "gaming"]
   
   func generateData() -> [NewsCategory] {
     var dataArray: [NewsCategory] = []
@@ -23,7 +23,7 @@ class DataFactory: NSObject {
     var randomNumberArray: [Int] = []
     
     for _ in 0..<categoryList.count {
-      randomNumberArray.append(randomNumber(inRange: 350_000...10_000_000))
+      randomNumberArray.append(Int().randomNumber(inRange: 350_000...10_000_000))
     }
     
     let consolidatedData = zip(categoryList, randomNumberArray)
@@ -47,9 +47,9 @@ class DataFactory: NSObject {
   }
   
   // Generate random numbers to populate NewsCategory structs
-  public func randomNumber<T : SignedInteger>(inRange range: ClosedRange<T> = 1...6) -> T {
-    let length = Int64(range.upperBound - range.lowerBound + 1)
-    let value = Int64(arc4random()) % length + Int64(range.lowerBound)
-    return T(value)
-  }
+//  public func randomNumber<T : SignedInteger>(inRange range: ClosedRange<T> = 1...6) -> T {
+//    let length = Int64(range.upperBound - range.lowerBound + 1)
+//    let value = Int64(arc4random()) % length + Int64(range.lowerBound)
+//    return T(value)
+//  }
 }

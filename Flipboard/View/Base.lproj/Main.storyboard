@@ -13,12 +13,12 @@
         <!--View Controller-->
         <scene sceneID="4DX-P5-0JS">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="oXY-vR-9dw" customClass="ViewController" customModule="Flipboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="oXY-vR-9dw" customClass="ViewController" customModule="Flipboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DpO-Xc-XM0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-eN-WxY">
+                            <tabBar clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-eN-WxY" customClass="SafeTabBar" customModule="Flipboard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -41,6 +41,7 @@
                         <viewLayoutGuide key="safeArea" id="3Vs-Wp-GnA"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="NRf-tc-j0K"/>
                     <connections>
                         <outlet property="exploreButton" destination="0H4-5k-eSY" id="90K-iB-Ux9"/>
                         <outlet property="followingButton" destination="qdp-G4-dJx" id="fi2-rz-gsY"/>
@@ -52,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX5-QE-7X3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="2252"/>
+            <point key="canvasLocation" x="10" y="2274"/>
         </scene>
     </scenes>
     <resources>
