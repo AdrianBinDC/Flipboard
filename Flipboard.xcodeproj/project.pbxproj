@@ -20,6 +20,7 @@
 		559B11A820A3A3A6000011B8 /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559B11A720A3A3A6000011B8 /* SearchBar.xib */; };
 		559B11AA20A3C056000011B8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A920A3C056000011B8 /* CustomButton.swift */; };
 		559B11AC20A46931000011B8 /* SafeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11AB20A46931000011B8 /* SafeTabBar.swift */; };
+		559B11AE20A4B4F1000011B8 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		559B11A720A3A3A6000011B8 /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
 		559B11A920A3C056000011B8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		559B11AB20A46931000011B8 /* SafeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTabBar.swift; sourceTree = "<group>"; };
+		559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				5512F77E20A322D100B0CF76 /* Main.storyboard */,
 				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
 				559B11A720A3A3A6000011B8 /* SearchBar.xib */,
+				559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */,
 				559B119F20A36C06000011B8 /* ViewController.swift in Sources */,
 				559B11AA20A3C056000011B8 /* CustomButton.swift in Sources */,
+				559B11AE20A4B4F1000011B8 /* PageCollectionViewCell.swift in Sources */,
 				5512F77B20A322D100B0CF76 /* AppDelegate.swift in Sources */,
 				559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */,
 				559B11AC20A46931000011B8 /* SafeTabBar.swift in Sources */,

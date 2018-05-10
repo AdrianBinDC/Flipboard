@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-eN-WxY" customClass="SafeTabBar" customModule="Flipboard" customModuleProvider="target">
+                            <tabBar clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-eN-WxY">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -31,6 +31,51 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tabBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-q9-vSp">
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xiT-1R-xSU">
+                                    <size key="itemSize" width="375" height="544"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="View" id="Hlj-Ag-B1S" customClass="PageCollectionViewCell" customModule="Flipboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-1" width="375" height="544"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="544"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIW-OL-rDS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="544"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="JIW-OL-rDS" secondAttribute="bottom" id="BXG-vQ-opq"/>
+                                            <constraint firstItem="JIW-OL-rDS" firstAttribute="top" secondItem="Hlj-Ag-B1S" secondAttribute="top" id="MSR-4t-BVg"/>
+                                            <constraint firstItem="JIW-OL-rDS" firstAttribute="leading" secondItem="Hlj-Ag-B1S" secondAttribute="leading" id="plG-GV-zt0"/>
+                                            <constraint firstAttribute="trailing" secondItem="JIW-OL-rDS" secondAttribute="trailing" id="pzT-5k-14z"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="containerView" destination="JIW-OL-rDS" id="JzU-hN-xwB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="oXY-vR-9dw" id="OkE-6o-1Mj"/>
+                                    <outlet property="delegate" destination="oXY-vR-9dw" id="0Bi-lG-BwQ"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WoA-jH-baG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -43,17 +88,19 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="NRf-tc-j0K"/>
                     <connections>
-                        <outlet property="exploreButton" destination="0H4-5k-eSY" id="90K-iB-Ux9"/>
-                        <outlet property="followingButton" destination="qdp-G4-dJx" id="fi2-rz-gsY"/>
-                        <outlet property="homeButton" destination="jsd-O8-DqP" id="hTO-Ep-9x5"/>
-                        <outlet property="notificationButton" destination="11X-HC-udN" id="nwP-sH-Jkw"/>
-                        <outlet property="profileButton" destination="7x1-2f-aDd" id="GuW-T9-c7j"/>
-                        <outlet property="tabBar" destination="KB0-eN-WxY" id="9hE-Bv-6JP"/>
+                        <outlet property="collectionView" destination="1Qg-q9-vSp" id="w3p-Yl-SI4"/>
+                        <outlet property="exploreButton" destination="0H4-5k-eSY" id="o4a-b4-VLz"/>
+                        <outlet property="followingButton" destination="qdp-G4-dJx" id="JJ9-Mj-END"/>
+                        <outlet property="homeButton" destination="jsd-O8-DqP" id="BaB-JX-JDx"/>
+                        <outlet property="notificationButton" destination="11X-HC-udN" id="gYW-EU-wYZ"/>
+                        <outlet property="profileButton" destination="7x1-2f-aDd" id="1mi-ra-jXP"/>
+                        <outlet property="searchBar" destination="WoA-jH-baG" id="eYI-0Y-xXn"/>
+                        <outlet property="tabBar" destination="KB0-eN-WxY" id="DU3-lh-sOt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX5-QE-7X3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="2274"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="2273.6131934032987"/>
         </scene>
     </scenes>
     <resources>

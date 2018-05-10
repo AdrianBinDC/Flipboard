@@ -14,6 +14,10 @@ class ViewController: UIViewController {
   
   // MARK: IBOutlets
   
+  // FIXME: create your own search bar
+  @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet weak var collectionView: UICollectionView!
+  
   @IBOutlet weak var tabBar: UITabBar!
   @IBOutlet weak var homeButton: UITabBarItem!
   @IBOutlet weak var followingButton: UITabBarItem!
@@ -22,13 +26,38 @@ class ViewController: UIViewController {
   @IBOutlet weak var profileButton: UITabBarItem!
   
   // MARK: Variables
-  var dataSource: [NewsCategory]!
+  var viewArray: [UIView]! {
+    didSet {
+//      print("view added")
+    }
+  }
+  
+  var currentlySelectedButton: UITabBarItem!
   
   // MARK: Lifecycle Methods
-  
   override func viewDidLoad() {
     super.viewDidLoad()
+    let layout = UICollectionViewFlowLayout()
+    layout.itemSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    layout.scrollDirection = .horizontal
+    layout.minimumInteritemSpacing = 0
+    layout.minimumLineSpacing = 0
+//    collectionView.isPagingEnabled = true
     
+    configureTabBar()
+//    configureDummyViews()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    self.tabBar.invalidateIntrinsicContentSize()
+    configureDummyViews()
+  }
+  
+  // MARK: Configuration Methods
+  
+  fileprivate func configureTabBar() {
+    // configure the tab bar
     tabBar.delegate = self
     tabBar.selectedItem = homeButton
     
@@ -42,20 +71,31 @@ class ViewController: UIViewController {
         // could be icon size or could be bug, diagnose to determine which
         tabBarItem?.imageInsets = UIEdgeInsetsMake(18, 0, 0, 0)
       }
-      // non-iPhone X
+        // non-iPhone X
       else {
         tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
       }
     }
     
-    // populate data source
-    let dataFactory = DataFactory()
-    dataSource = dataFactory.generateData()
+    currentlySelectedButton = homeButton
   }
   
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    self.tabBar.invalidateIntrinsicContentSize()
+  // MARK: Test Methods
+  
+  func configureDummyViews() {
+    viewArray = []
+    var colorArray: [UIColor] = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue]
+    for index in 0..<5 {
+      let view = UIView(frame: collectionView.bounds)
+      view.backgroundColor = colorArray[index]
+      let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+      label.text = "Dummy View \(index + 1)"
+      label.sizeToFit()
+      label.center = view.center
+      view.addSubview(label)
+      view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      viewArray.append(view)
+    }
   }
   
   // MARK: IBActions
@@ -66,25 +106,65 @@ class ViewController: UIViewController {
 
 extension ViewController: UITabBarDelegate {
   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-    guard tabBar.selectedItem != item else { return }
+    guard currentlySelectedButton != item else { return }
+    
+    var destinationIndex: IndexPath? {
+      didSet {
+        print("destinationIndex = ", destinationIndex?.debugDescription ?? "")
+      }
+    }
+    
     switch item {
     case self.homeButton:
-      print("homeButton")
-      break
+      destinationIndex = IndexPath(row: 0, section: 0)
     case self.followingButton:
-      print("followingButton")
-      break
+      destinationIndex = IndexPath(row: 1, section: 0)
     case self.exploreButton:
-      print("exploreButton")
-      break
+      destinationIndex = IndexPath(row: 2, section: 0)
     case self.notificationButton:
-      print("notificationButton")
-      break
+      destinationIndex = IndexPath(row: 3, section: 0)
     case self.profileButton:
-      print("profileButton")
-      break
+      destinationIndex = IndexPath(row: 4, section: 0)
     default:
       break
     }
-    }
+    
+    currentlySelectedButton = item
+    
+    collectionView.scrollToItem(at: destinationIndex!, at: .centeredHorizontally, animated: true)
+  }
+}
+
+// MARK: UICollectionViewDelegate methods
+
+extension ViewController: UICollectionViewDelegate {
+  
+}
+
+// MARK: UICollectionViewDataSource methods
+
+extension ViewController: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    print(viewArray.count)
+    return viewArray.count
+  }
+  
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "View", for: indexPath) as! PageCollectionViewCell
+    let view = viewArray[indexPath.row]
+    print(view.backgroundColor.debugDescription)
+    cell.containerView.addSubview(view)
+//    cell.containerView.sizeToFit()
+    return cell
+  }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+  }
 }
