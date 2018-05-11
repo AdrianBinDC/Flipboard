@@ -26,7 +26,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var profileButton: UITabBarItem!
   
   // MARK: Variables
-  var viewArray: [UIView]!
+  var pageViewArray: [UIView]!
   
   var currentlySelectedButton: UITabBarItem!
   
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     super.viewDidLayoutSubviews()
     self.tabBar.invalidateIntrinsicContentSize()
     configureCollectionView()
-    configureDummyViews()
+    configurePages()
   }
   
   // MARK: Configuration Methods
@@ -81,19 +81,23 @@ class ViewController: UIViewController {
   
   // MARK: Test Methods
   
-  func configureDummyViews() {
-    viewArray = []
-    var colorArray: [UIColor] = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue]
-    for index in 0..<5 {
+  func configurePages() {
+    pageViewArray = []
+    let homeView = HomeView(frame: collectionView.bounds)
+    homeView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    homeView.backgroundColor = UIColor.white
+    pageViewArray.append(homeView)
+    
+    for index in 0..<4 {
       let view = UIView(frame: collectionView.bounds)
-      view.backgroundColor = colorArray[index]
+      view.backgroundColor = UIColor.lightGray
       let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
       label.text = "Dummy View \(index + 1)"
       label.sizeToFit()
       label.center = view.center
       view.addSubview(label)
       view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-      viewArray.append(view)
+      pageViewArray.append(view)
     }
   }
   
@@ -142,7 +146,7 @@ extension ViewController: UICollectionViewDelegate {
 
 extension ViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewArray.count
+    return pageViewArray.count
   }
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -151,7 +155,7 @@ extension ViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "View", for: indexPath) as! PageCollectionViewCell
-    let view = viewArray[indexPath.row]
+    let view = pageViewArray[indexPath.row]
     cell.containerView.addSubview(view)
     return cell
   }
