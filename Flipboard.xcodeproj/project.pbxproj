@@ -16,6 +16,13 @@
 		5512F79E20A322D200B0CF76 /* FlipboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F79D20A322D200B0CF76 /* FlipboardUITests.swift */; };
 		558275E720A51DDE00529EE9 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558275E620A51DDE00529EE9 /* HomeView.xib */; };
 		558275E920A5295700529EE9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558275E820A5295700529EE9 /* HomeView.swift */; };
+		558275F020A53CCF00529EE9 /* HomeViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */; };
+		558275F120A53CCF00529EE9 /* HomeViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */; };
+		558275F320A5AB6300529EE9 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 558275F220A5A98200529EE9 /* SourceSansPro-Regular.ttf */; };
+		558275F620A5ABA700529EE9 /* FiraSansCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 558275F420A5AB8600529EE9 /* FiraSansCondensed-Bold.ttf */; };
+		558275F720A5ABA700529EE9 /* FiraSansCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 558275F520A5ABA100529EE9 /* FiraSansCondensed-ExtraBold.ttf */; };
+		558275FA20A5ACA600529EE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558275F920A5ACA600529EE9 /* Constants.swift */; };
+		558275FC20A5B10400529EE9 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558275FB20A5B10400529EE9 /* CALayer+Extension.swift */; };
 		559B119F20A36C06000011B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B119E20A36C06000011B8 /* ViewController.swift */; };
 		559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A320A39B9B000011B8 /* DataFactory.swift */; };
 		559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A520A39BE2000011B8 /* Int+Extension.swift */; };
@@ -58,6 +65,13 @@
 		5512F7AB20A3235D00B0CF76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		558275E620A51DDE00529EE9 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		558275E820A5295700529EE9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTableViewCell.swift; sourceTree = "<group>"; };
+		558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewTableViewCell.xib; sourceTree = "<group>"; };
+		558275F220A5A98200529EE9 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		558275F420A5AB8600529EE9 /* FiraSansCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		558275F520A5ABA100529EE9 /* FiraSansCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
+		558275F920A5ACA600529EE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		558275FB20A5B10400529EE9 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		559B119E20A36C06000011B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		559B11A320A39B9B000011B8 /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		559B11A520A39BE2000011B8 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
@@ -116,9 +130,11 @@
 			children = (
 				5512F7AB20A3235D00B0CF76 /* README.md */,
 				5512F77A20A322D100B0CF76 /* AppDelegate.swift */,
+				558275F920A5ACA600529EE9 /* Constants.swift */,
 				559B11A220A39B3F000011B8 /* Model */,
 				559B11A120A39B35000011B8 /* View */,
 				559B11A020A39B2E000011B8 /* Controller */,
+				558275F820A5ABB400529EE9 /* Supporting Files */,
 				5512F78420A322D200B0CF76 /* Assets.xcassets */,
 				5512F78920A322D200B0CF76 /* Info.plist */,
 				5512F78120A322D100B0CF76 /* Flipboard.xcdatamodeld */,
@@ -144,6 +160,16 @@
 			path = FlipboardUITests;
 			sourceTree = "<group>";
 		};
+		558275F820A5ABB400529EE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				558275F220A5A98200529EE9 /* SourceSansPro-Regular.ttf */,
+				558275F420A5AB8600529EE9 /* FiraSansCondensed-Bold.ttf */,
+				558275F520A5ABA100529EE9 /* FiraSansCondensed-ExtraBold.ttf */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		559B11A020A39B2E000011B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +186,8 @@
 				559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */,
 				558275E620A51DDE00529EE9 /* HomeView.xib */,
 				558275E820A5295700529EE9 /* HomeView.swift */,
+				558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */,
+				558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +199,7 @@
 				559B11A520A39BE2000011B8 /* Int+Extension.swift */,
 				559B11A920A3C056000011B8 /* CustomButton.swift */,
 				559B11AB20A46931000011B8 /* SafeTabBar.swift */,
+				558275FB20A5B10400529EE9 /* CALayer+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,8 +310,12 @@
 			files = (
 				5512F78820A322D200B0CF76 /* LaunchScreen.storyboard in Resources */,
 				558275E720A51DDE00529EE9 /* HomeView.xib in Resources */,
+				558275F620A5ABA700529EE9 /* FiraSansCondensed-Bold.ttf in Resources */,
 				5512F78520A322D200B0CF76 /* Assets.xcassets in Resources */,
+				558275F120A53CCF00529EE9 /* HomeViewTableViewCell.xib in Resources */,
 				5512F78020A322D100B0CF76 /* Main.storyboard in Resources */,
+				558275F320A5AB6300529EE9 /* SourceSansPro-Regular.ttf in Resources */,
+				558275F720A5ABA700529EE9 /* FiraSansCondensed-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +341,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				558275E920A5295700529EE9 /* HomeView.swift in Sources */,
+				558275FA20A5ACA600529EE9 /* Constants.swift in Sources */,
 				559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */,
 				559B119F20A36C06000011B8 /* ViewController.swift in Sources */,
+				558275F020A53CCF00529EE9 /* HomeViewTableViewCell.swift in Sources */,
 				559B11AA20A3C056000011B8 /* CustomButton.swift in Sources */,
 				559B11AE20A4B4F1000011B8 /* PageCollectionViewCell.swift in Sources */,
 				5512F77B20A322D100B0CF76 /* AppDelegate.swift in Sources */,
 				559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */,
 				559B11AC20A46931000011B8 /* SafeTabBar.swift in Sources */,
 				5512F78320A322D100B0CF76 /* Flipboard.xcdatamodeld in Sources */,
+				558275FC20A5B10400529EE9 /* CALayer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

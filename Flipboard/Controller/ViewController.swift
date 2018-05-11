@@ -68,7 +68,8 @@ class ViewController: UIViewController {
       if screenSize.width == 375 && screenSize.height == 812 {
         // FIXME: displays icorrectly on iPhone X
         // could be icon size or could be bug, diagnose to determine which
-        tabBarItem?.imageInsets = UIEdgeInsetsMake(18, 0, 0, 0)
+//        tabBarItem?.imageInsets = UIEdgeInsetsMake(18, 0, 0, 0)
+        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
       }
         // non-iPhone X
       else {
@@ -88,11 +89,13 @@ class ViewController: UIViewController {
     homeView.backgroundColor = UIColor.white
     pageViewArray.append(homeView)
     
+    var titleArray = ["Following", "Explore", "Notification", "Profile"]
     for index in 0..<4 {
       let view = UIView(frame: collectionView.bounds)
       view.backgroundColor = UIColor.lightGray
       let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-      label.text = "Dummy View \(index + 1)"
+      label.font = UIFont(name: FontString.firaSansCondensedBold.rawValue, size: 18.0)
+      label.text = "\(titleArray[index]) View"
       label.sizeToFit()
       label.center = view.center
       view.addSubview(label)
