@@ -26,35 +26,34 @@ class ViewController: UIViewController {
   @IBOutlet weak var profileButton: UITabBarItem!
   
   // MARK: Variables
-  var viewArray: [UIView]! {
-    didSet {
-//      print("view added")
-    }
-  }
+  var viewArray: [UIView]!
   
   var currentlySelectedButton: UITabBarItem!
   
   // MARK: Lifecycle Methods
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    let layout = UICollectionViewFlowLayout()
-    layout.itemSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    layout.scrollDirection = .horizontal
-    layout.minimumInteritemSpacing = 0
-    layout.minimumLineSpacing = 0
-//    collectionView.isPagingEnabled = true
-    
     configureTabBar()
-//    configureDummyViews()
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     self.tabBar.invalidateIntrinsicContentSize()
+    configureCollectionView()
     configureDummyViews()
   }
   
   // MARK: Configuration Methods
+  
+  fileprivate func configureCollectionView() {
+    let layout = UICollectionViewFlowLayout()
+    layout.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+    layout.scrollDirection = .horizontal
+    layout.minimumInteritemSpacing = 0
+    layout.minimumLineSpacing = 0
+    collectionView.isScrollEnabled = false
+  }
   
   fileprivate func configureTabBar() {
     // configure the tab bar
@@ -108,11 +107,7 @@ extension ViewController: UITabBarDelegate {
   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     guard currentlySelectedButton != item else { return }
     
-    var destinationIndex: IndexPath? {
-      didSet {
-        print("destinationIndex = ", destinationIndex?.debugDescription ?? "")
-      }
-    }
+    var destinationIndex: IndexPath?
     
     switch item {
     case self.homeButton:
@@ -138,14 +133,15 @@ extension ViewController: UITabBarDelegate {
 // MARK: UICollectionViewDelegate methods
 
 extension ViewController: UICollectionViewDelegate {
-  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    collectionView.reloadData()
+  }
 }
 
 // MARK: UICollectionViewDataSource methods
 
 extension ViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    print(viewArray.count)
     return viewArray.count
   }
   
@@ -156,15 +152,23 @@ extension ViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "View", for: indexPath) as! PageCollectionViewCell
     let view = viewArray[indexPath.row]
-    print(view.backgroundColor.debugDescription)
     cell.containerView.addSubview(view)
-//    cell.containerView.sizeToFit()
     return cell
   }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout methods
+
 extension ViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+    return CGSize(width: collectionView.bounds.size.width, height: collectionView.bounds.size.height)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
   }
 }
