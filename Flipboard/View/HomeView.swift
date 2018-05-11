@@ -46,7 +46,8 @@ class HomeView: UIView {
     searchTextField.delegate = self
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(recognizer:)))
     self.addGestureRecognizer(tapGesture)
-//    searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+    searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+    searchTextField.tintColor = accentRed
 
     // configure UIButton
     searchButton.tintColor = accentRed
@@ -56,8 +57,13 @@ class HomeView: UIView {
     searchButton.setTitle("cancel", for: .highlighted)
 
     // configure UITableView
+//    tableView.register(HomeViewTableViewCell.self, forCellReuseIdentifier: "Cell")
+    let nib = UINib(nibName: "HomeViewTableViewCell", bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: "Cell")
     let tableViewSeparatorColor: UIColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
     tableView.layer.addBorder(edge: .top, color: tableViewSeparatorColor, thickness: 1.0)
+    tableView.delegate = self
+    tableView.dataSource = self
   }
   
   // MARK: Helpers
@@ -68,20 +74,36 @@ class HomeView: UIView {
   
 //  func toggleSearchButton() {
   @objc func textFieldDidChange(textField: UITextField) {
-//    guard let text = textField.text else {
-//      searchButton.isHighlighted = true
-//      return
-//    }
-//    if text.count > 0 {
-//      self.searchButton.isHighlighted = true
-//    } else {
-//      self.searchButton.isHighlighted = false
-//    }
-    if textField.text!.count > 0 {
+    guard let text = textField.text else {
+      searchButton.isHighlighted = true
+      return
+    }
+    if text.count > 0 {
       self.searchButton.isHighlighted = true
     } else {
       self.searchButton.isHighlighted = false
     }
+  }
+}
+
+extension HomeView: UITableViewDelegate {
+  
+}
+
+extension HomeView: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return dataSource.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeViewTableViewCell
+    cell.headlineLabel.text = dataSource[indexPath.row].title.uppercased()
+    cell.subtitleLabel.text = dataSource[indexPath.row].subTitle
+    return cell
   }
 }
 

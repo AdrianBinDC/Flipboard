@@ -10,7 +10,11 @@ import UIKit
 
 class HomeViewTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var headlineLabel: UILabel!
+  @IBOutlet weak var subtitleLabel: UILabel!
+  
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
