@@ -186,8 +186,8 @@
 				559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */,
 				558275E620A51DDE00529EE9 /* HomeView.xib */,
 				558275E820A5295700529EE9 /* HomeView.swift */,
-				558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */,
 				558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */,
+				558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

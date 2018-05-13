@@ -42,7 +42,6 @@ class DataFactory: NSObject {
       dataArray.append(newsCategory)
     }
     
-    print(dataArray)
     return dataArray
   }
   

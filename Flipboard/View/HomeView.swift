@@ -40,6 +40,16 @@ class HomeView: UIView {
     let dataFactory = DataFactory()
     dataSource = dataFactory.generateData()
     
+    configureSearchTextField()
+
+    configureSearchButton()
+
+    configureTableView()
+  }
+  
+  // MARK: Initial Configuration
+  
+  fileprivate func configureSearchTextField() {
     // Configure Search TextField
     searchTextField.font = UIFont(name: FontString.firaSansCondensedBold.rawValue, size: 22)
     searchTextField.attributedPlaceholder = NSAttributedString(string: "EXPLORE MORE PASSIONS", attributes: [NSAttributedStringKey.foregroundColor : placeHolderColor])
@@ -48,16 +58,19 @@ class HomeView: UIView {
     self.addGestureRecognizer(tapGesture)
     searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     searchTextField.tintColor = accentRed
-
+  }
+  
+  fileprivate func configureSearchButton() {
     // configure UIButton
     searchButton.tintColor = accentRed
     searchButton.setImage(UIImage(named: IconString.magnifyingGlass.rawValue), for: .normal)
     searchButton.setTitle(nil, for: .normal)
     searchButton.setImage(nil, for: .highlighted)
     searchButton.setTitle("cancel", for: .highlighted)
-
+  }
+  
+  fileprivate func configureTableView() {
     // configure UITableView
-//    tableView.register(HomeViewTableViewCell.self, forCellReuseIdentifier: "Cell")
     let nib = UINib(nibName: "HomeViewTableViewCell", bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: "Cell")
     let tableViewSeparatorColor: UIColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
@@ -65,6 +78,7 @@ class HomeView: UIView {
     tableView.delegate = self
     tableView.dataSource = self
   }
+  
   
   // MARK: Helpers
   

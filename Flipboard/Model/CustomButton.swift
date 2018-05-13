@@ -24,7 +24,6 @@ class CustomButton: UIButton {
    */
   
   func configureFor(search: Search) {
-    6
   }
   
 }

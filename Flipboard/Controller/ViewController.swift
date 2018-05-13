@@ -15,7 +15,6 @@ class ViewController: UIViewController {
   // MARK: IBOutlets
   
   // FIXME: create your own search bar
-  @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var collectionView: UICollectionView!
   
   @IBOutlet weak var tabBar: UITabBar!
@@ -34,12 +33,13 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.navigationController?.setToolbarHidden(true, animated: false)
     configureTabBar()
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    self.tabBar.invalidateIntrinsicContentSize()
+//    self.tabBar.invalidateIntrinsicContentSize()
     configureCollectionView()
     configurePages()
   }
@@ -69,13 +69,19 @@ class ViewController: UIViewController {
         // FIXME: displays icorrectly on iPhone X
         // could be icon size or could be bug, diagnose to determine which
 //        tabBarItem?.imageInsets = UIEdgeInsetsMake(18, 0, 0, 0)
-        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
+//        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
+        // Looks good, doesn't respond well
+        // tabBarItem?.imageInsets = UIEdgeInsets(top: 18, left: 3, bottom: -18, right: 3)
+        tabBarItem?.imageInsets = UIEdgeInsets(top: 12, left: 4, bottom: -12, right: 4)
+
       }
         // non-iPhone X
       else {
         tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
       }
     }
+    
+    tabBar.setNeedsDisplay()
     
     currentlySelectedButton = homeButton
   }
@@ -151,6 +157,7 @@ extension ViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return pageViewArray.count
   }
+
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -167,6 +174,7 @@ extension ViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout methods
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.bounds.size.width, height: collectionView.bounds.size.height)
   }
