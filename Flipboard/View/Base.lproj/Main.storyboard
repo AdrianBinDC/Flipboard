@@ -52,6 +52,10 @@
                                     <outlet property="delegate" destination="oXY-vR-9dw" id="0Bi-lG-BwQ"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-qQ-HMY">
+                                <rect key="frame" x="0.0" y="613" width="375" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hat-Ms-ywq" customClass="AnimatedTabBar" customModule="Flipboard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="613" width="375" height="54"/>
                                 <constraints>
@@ -64,12 +68,16 @@
                             <constraint firstItem="hat-Ms-ywq" firstAttribute="top" secondItem="1Qg-q9-vSp" secondAttribute="bottom" id="3Kg-Bb-qg8"/>
                             <constraint firstItem="hat-Ms-ywq" firstAttribute="leading" secondItem="3Vs-Wp-GnA" secondAttribute="leading" id="6M4-wz-V6f"/>
                             <constraint firstItem="1Qg-q9-vSp" firstAttribute="leading" secondItem="3Vs-Wp-GnA" secondAttribute="leading" id="ELO-Ie-EHU"/>
+                            <constraint firstItem="HpX-qQ-HMY" firstAttribute="top" secondItem="1Qg-q9-vSp" secondAttribute="bottom" id="aGu-br-s3p"/>
                             <constraint firstItem="hat-Ms-ywq" firstAttribute="top" secondItem="1Qg-q9-vSp" secondAttribute="bottom" id="bhv-4H-Dfq"/>
+                            <constraint firstItem="HpX-qQ-HMY" firstAttribute="leading" secondItem="3Vs-Wp-GnA" secondAttribute="leading" id="bqa-2z-lKK"/>
                             <constraint firstItem="1Qg-q9-vSp" firstAttribute="top" secondItem="3Vs-Wp-GnA" secondAttribute="top" id="eK5-dN-kJd"/>
                             <constraint firstItem="1Qg-q9-vSp" firstAttribute="trailing" secondItem="3Vs-Wp-GnA" secondAttribute="trailing" id="gb3-dD-Wyc"/>
                             <constraint firstItem="hat-Ms-ywq" firstAttribute="bottom" secondItem="3Vs-Wp-GnA" secondAttribute="bottom" id="jI1-90-sE9"/>
                             <constraint firstItem="hat-Ms-ywq" firstAttribute="top" secondItem="1Qg-q9-vSp" secondAttribute="bottom" id="lfC-Gk-1oP"/>
                             <constraint firstItem="hat-Ms-ywq" firstAttribute="trailing" secondItem="3Vs-Wp-GnA" secondAttribute="trailing" id="lxS-zz-Hv4"/>
+                            <constraint firstItem="HpX-qQ-HMY" firstAttribute="bottom" secondItem="DpO-Xc-XM0" secondAttribute="bottom" id="yeO-ta-cPV"/>
+                            <constraint firstItem="HpX-qQ-HMY" firstAttribute="trailing" secondItem="3Vs-Wp-GnA" secondAttribute="trailing" id="zNN-Ka-Xr7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Vs-Wp-GnA"/>
                     </view>
@@ -77,6 +85,7 @@
                     <navigationItem key="navigationItem" id="NRf-tc-j0K"/>
                     <connections>
                         <outlet property="collectionView" destination="1Qg-q9-vSp" id="w3p-Yl-SI4"/>
+                        <outlet property="spacerView" destination="HpX-qQ-HMY" id="eex-j2-8n9"/>
                         <outlet property="tabBar" destination="hat-Ms-ywq" id="tRw-G7-sqv"/>
                     </connections>
                 </viewController>

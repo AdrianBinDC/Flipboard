@@ -16,8 +16,12 @@ class ViewController: UIViewController {
   
   // FIXME: create your own search bar
   @IBOutlet weak var collectionView: UICollectionView!
-  
   @IBOutlet weak var tabBar: AnimatedTabBar!
+  
+  // This is a view added to get around an icon offset issue when pinning
+  // tabBar's bottom to the superView when working on an iPhone X.
+  @IBOutlet weak var spacerView: UIView!
+  
   
   
   // MARK: Variables
@@ -31,7 +35,8 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.navigationController?.setToolbarHidden(true, animated: false)
     tabBar.delegate = self
-    //    configureTabBar()
+    spacerView.backgroundColor = tabBar.backgroundColor
+    tabBar.sendSubview(toBack: spacerView)
   }
   
   override func viewDidLayoutSubviews() {

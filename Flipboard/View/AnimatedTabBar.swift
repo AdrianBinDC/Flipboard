@@ -12,7 +12,6 @@ protocol AnimatedTabBarDelegate: class {
   func scrollToViewIndex(_ index: Int)
 }
 
-@IBDesignable
 class AnimatedTabBar: UIView {
   
   @IBOutlet var contentView: UIView!
@@ -54,8 +53,9 @@ class AnimatedTabBar: UIView {
     addSubview(contentView)
     contentView.frame = self.bounds
     contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
-    backgroundColor = UIColor.black
+
+    contentView.backgroundColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1) // match tab bar color via Color Literal + dropper
+    backgroundColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1) // match tab bar color via Color Literal + dropper
     tintColor = UIColor.white
     
     tabBar.delegate = self
