@@ -29,6 +29,8 @@
 		559B11AA20A3C056000011B8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A920A3C056000011B8 /* CustomButton.swift */; };
 		559B11AC20A46931000011B8 /* SafeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11AB20A46931000011B8 /* SafeTabBar.swift */; };
 		559B11AE20A4B4F1000011B8 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */; };
+		55A3396420A894B70037254D /* AnimatedTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A3396320A894B70037254D /* AnimatedTabBar.xib */; };
+		55A3396620A894CB0037254D /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3396520A894CB0037254D /* AnimatedTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		559B11A920A3C056000011B8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		559B11AB20A46931000011B8 /* SafeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTabBar.swift; sourceTree = "<group>"; };
 		559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		55A3396320A894B70037254D /* AnimatedTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedTabBar.xib; sourceTree = "<group>"; };
+		55A3396520A894CB0037254D /* AnimatedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 				558275E820A5295700529EE9 /* HomeView.swift */,
 				558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */,
 				558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */,
+				55A3396320A894B70037254D /* AnimatedTabBar.xib */,
+				55A3396520A894CB0037254D /* AnimatedTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				558275E720A51DDE00529EE9 /* HomeView.xib in Resources */,
 				558275F620A5ABA700529EE9 /* FiraSansCondensed-Bold.ttf in Resources */,
 				5512F78520A322D200B0CF76 /* Assets.xcassets in Resources */,
+				55A3396420A894B70037254D /* AnimatedTabBar.xib in Resources */,
 				558275F120A53CCF00529EE9 /* HomeViewTableViewCell.xib in Resources */,
 				5512F78020A322D100B0CF76 /* Main.storyboard in Resources */,
 				558275F320A5AB6300529EE9 /* SourceSansPro-Regular.ttf in Resources */,
@@ -341,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558275E920A5295700529EE9 /* HomeView.swift in Sources */,
+				55A3396620A894CB0037254D /* AnimatedTabBar.swift in Sources */,
 				558275FA20A5ACA600529EE9 /* Constants.swift in Sources */,
 				559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */,
 				559B119F20A36C06000011B8 /* ViewController.swift in Sources */,

@@ -17,12 +17,8 @@ class ViewController: UIViewController {
   // FIXME: create your own search bar
   @IBOutlet weak var collectionView: UICollectionView!
   
-  @IBOutlet weak var tabBar: UITabBar!
-  @IBOutlet weak var homeButton: UITabBarItem!
-  @IBOutlet weak var followingButton: UITabBarItem!
-  @IBOutlet weak var exploreButton: UITabBarItem!
-  @IBOutlet weak var notificationButton: UITabBarItem!
-  @IBOutlet weak var profileButton: UITabBarItem!
+  @IBOutlet weak var tabBar: AnimatedTabBar!
+  
   
   // MARK: Variables
   var pageViewArray: [UIView]!
@@ -34,12 +30,13 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.setToolbarHidden(true, animated: false)
-    configureTabBar()
+    tabBar.delegate = self
+    //    configureTabBar()
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-//    self.tabBar.invalidateIntrinsicContentSize()
+    //    self.tabBar.invalidateIntrinsicContentSize()
     configureCollectionView()
     configurePages()
   }
@@ -55,36 +52,35 @@ class ViewController: UIViewController {
     collectionView.isScrollEnabled = false
   }
   
-  fileprivate func configureTabBar() {
-    // configure the tab bar
-    tabBar.delegate = self
-    tabBar.selectedItem = homeButton
-    
-    // compute screen width to determine offset of UITabBar
-    let screenSize = self.view.bounds
-    
-    [homeButton, followingButton, exploreButton, notificationButton, profileButton].forEach { tabBarItem in
-      // screen dimensions of iPhone X
-      if screenSize.width == 375 && screenSize.height == 812 {
-        // FIXME: displays icorrectly on iPhone X
-        // could be icon size or could be bug, diagnose to determine which
-//        tabBarItem?.imageInsets = UIEdgeInsetsMake(18, 0, 0, 0)
-//        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
-        // Looks good, doesn't respond well
-        // tabBarItem?.imageInsets = UIEdgeInsets(top: 18, left: 3, bottom: -18, right: 3)
-        tabBarItem?.imageInsets = UIEdgeInsets(top: 12, left: 4, bottom: -12, right: 4)
-
-      }
-        // non-iPhone X
-      else {
-        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
-      }
-    }
-    
-    tabBar.setNeedsDisplay()
-    
-    currentlySelectedButton = homeButton
-  }
+  //  fileprivate func configureTabBar() {
+  //    // configure the tab bar
+  //    tabBar.delegate = self
+  ////    tabBar.selectedItem = homeButton
+  //
+  //    // compute screen width to determine offset of UITabBar
+  //    let screenSize = self.view.bounds
+  //
+  //    [homeButton, followingButton, exploreButton, notificationButton, profileButton].forEach { tabBarItem in
+  //      // screen dimensions of iPhone X
+  //      if screenSize.width == 375 && screenSize.height == 812 {
+  //        // FIXME: displays icorrectly on iPhone X
+  //        // could be icon size or could be bug, diagnose to determine which
+  //        // Looks good, doesn't respond well
+  //        // tabBarItem?.imageInsets = UIEdgeInsets(top: 18, left: 3, bottom: -18, right: 3)
+  ////        tabBarItem?.imageInsets = UIEdgeInsets(top: 12, left: 4, bottom: -12, right: 4)
+  //        tabBarItem?.imageInsets = UIEdgeInsets(top: 12, left: 4, bottom: -8, right: 4)
+  //
+  //      }
+  //        // non-iPhone X
+  //      else {
+  //        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
+  //      }
+  //    }
+  //
+  //    tabBar.setNeedsDisplay()
+  //
+  //    currentlySelectedButton = homeButton
+  //  }
   
   // MARK: Test Methods
   
@@ -114,35 +110,6 @@ class ViewController: UIViewController {
   
 }
 
-// MARK: UITabBarDelegate
-
-extension ViewController: UITabBarDelegate {
-  func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-    guard currentlySelectedButton != item else { return }
-    
-    var destinationIndex: IndexPath?
-    
-    switch item {
-    case self.homeButton:
-      destinationIndex = IndexPath(row: 0, section: 0)
-    case self.followingButton:
-      destinationIndex = IndexPath(row: 1, section: 0)
-    case self.exploreButton:
-      destinationIndex = IndexPath(row: 2, section: 0)
-    case self.notificationButton:
-      destinationIndex = IndexPath(row: 3, section: 0)
-    case self.profileButton:
-      destinationIndex = IndexPath(row: 4, section: 0)
-    default:
-      break
-    }
-    
-    currentlySelectedButton = item
-    
-    collectionView.scrollToItem(at: destinationIndex!, at: .centeredHorizontally, animated: true)
-  }
-}
-
 // MARK: UICollectionViewDelegate methods
 
 extension ViewController: UICollectionViewDelegate {
@@ -157,7 +124,7 @@ extension ViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return pageViewArray.count
   }
-
+  
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -185,5 +152,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 0
+  }
+}
+
+// MARK: AnimatedTabBarDelegate methods
+
+extension ViewController: AnimatedTabBarDelegate {
+  func scrollToViewIndex(_ index: Int) {
+    let destinationIndex = IndexPath(row: index, section: 0)
+    collectionView.scrollToItem(at: destinationIndex, at: .centeredHorizontally, animated: true)
   }
 }

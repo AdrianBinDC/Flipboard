@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UITabBar.appearance().tintColor = UIColor.white
     
     // FIXME: Does not work properly
-    UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: UIColor.red, size: CGSize(width:(self.window?.frame.size.width)!/4,height: 49), lineSize: CGSize(width:(self.window?.frame.size.width)!/4, height:2))
+//    UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: UIColor.red, size: CGSize(width:(self.window?.frame.size.width)!/4,height: 49), lineSize: CGSize(width:(self.window?.frame.size.width)!/4, height:2))
 
     
   }

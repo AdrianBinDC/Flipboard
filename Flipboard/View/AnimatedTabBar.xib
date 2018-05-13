@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimatedTabBar" customModule="Flipboard" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="h41-JZ-MaL"/>
+                <outlet property="exploreButton" destination="TPR-wj-jke" id="nZc-kk-T1n"/>
+                <outlet property="followingButton" destination="xig-oV-kap" id="RWP-Ne-4Rr"/>
+                <outlet property="homeButton" destination="Dzc-zh-SRQ" id="ATf-0k-gKB"/>
+                <outlet property="notificationButton" destination="cLA-2J-vGS" id="gZB-Nj-HxQ"/>
+                <outlet property="profileButton" destination="b3y-8q-XmU" id="CFr-in-I9E"/>
+                <outlet property="tabBar" destination="49O-0I-ZI9" id="rax-Yf-R0r"/>
+                <outlet property="tabIndicator" destination="mjx-hD-m0J" id="dCd-L3-IWI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="49O-0I-ZI9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items>
+                        <tabBarItem title="" image="home-icon" id="Dzc-zh-SRQ">
+                            <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        </tabBarItem>
+                        <tabBarItem tag="1" title="" image="four-squares" id="xig-oV-kap">
+                            <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        </tabBarItem>
+                        <tabBarItem tag="2" title="" image="magnifying-glass" id="TPR-wj-jke">
+                            <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        </tabBarItem>
+                        <tabBarItem tag="3" title="" image="caption" id="cLA-2J-vGS">
+                            <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        </tabBarItem>
+                        <tabBarItem tag="4" title="" image="person" id="b3y-8q-XmU">
+                            <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        </tabBarItem>
+                    </items>
+                </tabBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjx-hD-m0J">
+                    <rect key="frame" x="0.0" y="46" width="75" height="3"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="7iK-1g-qr1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mjx-hD-m0J" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="1hk-k7-K6R"/>
+                <constraint firstAttribute="trailing" secondItem="mjx-hD-m0J" secondAttribute="trailing" constant="300" id="IXN-Dv-v6E"/>
+                <constraint firstItem="49O-0I-ZI9" firstAttribute="leading" secondItem="mjx-hD-m0J" secondAttribute="leading" id="gbN-Ar-gmz"/>
+                <constraint firstItem="49O-0I-ZI9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="vDu-FD-PKi"/>
+                <constraint firstItem="49O-0I-ZI9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vtC-bT-Kyd"/>
+                <constraint firstAttribute="trailing" secondItem="49O-0I-ZI9" secondAttribute="trailing" id="wB6-17-U74"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="-255.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="caption" width="36" height="36"/>
+        <image name="four-squares" width="36" height="36"/>
+        <image name="home-icon" width="36" height="36"/>
+        <image name="magnifying-glass" width="36" height="36"/>
+        <image name="person" width="36" height="36"/>
+    </resources>
+</document>
