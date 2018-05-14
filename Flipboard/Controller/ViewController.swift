@@ -21,12 +21,9 @@ class ViewController: UIViewController {
   // This is a view added to get around an icon offset issue when pinning
   // tabBar's bottom to the superView when working on an iPhone X.
   @IBOutlet weak var spacerView: UIView!
-  
-  
-  
+    
   // MARK: Variables
   var pageViewArray: [UIView]!
-  
   var currentlySelectedButton: UITabBarItem!
   
   // MARK: Lifecycle Methods
@@ -41,7 +38,6 @@ class ViewController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    //    self.tabBar.invalidateIntrinsicContentSize()
     configureCollectionView()
     configurePages()
   }
@@ -56,36 +52,6 @@ class ViewController: UIViewController {
     layout.minimumLineSpacing = 0
     collectionView.isScrollEnabled = false
   }
-  
-  //  fileprivate func configureTabBar() {
-  //    // configure the tab bar
-  //    tabBar.delegate = self
-  ////    tabBar.selectedItem = homeButton
-  //
-  //    // compute screen width to determine offset of UITabBar
-  //    let screenSize = self.view.bounds
-  //
-  //    [homeButton, followingButton, exploreButton, notificationButton, profileButton].forEach { tabBarItem in
-  //      // screen dimensions of iPhone X
-  //      if screenSize.width == 375 && screenSize.height == 812 {
-  //        // FIXME: displays icorrectly on iPhone X
-  //        // could be icon size or could be bug, diagnose to determine which
-  //        // Looks good, doesn't respond well
-  //        // tabBarItem?.imageInsets = UIEdgeInsets(top: 18, left: 3, bottom: -18, right: 3)
-  ////        tabBarItem?.imageInsets = UIEdgeInsets(top: 12, left: 4, bottom: -12, right: 4)
-  //        tabBarItem?.imageInsets = UIEdgeInsets(top: 12, left: 4, bottom: -8, right: 4)
-  //
-  //      }
-  //        // non-iPhone X
-  //      else {
-  //        tabBarItem?.imageInsets = UIEdgeInsetsMake(12, 6, 0, 6)
-  //      }
-  //    }
-  //
-  //    tabBar.setNeedsDisplay()
-  //
-  //    currentlySelectedButton = homeButton
-  //  }
   
   // MARK: Test Methods
   
@@ -110,9 +76,6 @@ class ViewController: UIViewController {
       pageViewArray.append(view)
     }
   }
-  
-  // MARK: IBActions
-  
 }
 
 // MARK: UICollectionViewDelegate methods

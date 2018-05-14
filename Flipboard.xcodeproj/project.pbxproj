@@ -14,6 +14,8 @@
 		5512F78820A322D200B0CF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */; };
 		5512F79320A322D200B0CF76 /* FlipboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F79220A322D200B0CF76 /* FlipboardTests.swift */; };
 		5512F79E20A322D200B0CF76 /* FlipboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512F79D20A322D200B0CF76 /* FlipboardUITests.swift */; };
+		5527431420A942A200265172 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5527431320A942A200265172 /* HeaderView.xib */; };
+		5527431620A942F100265172 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5527431520A942F100265172 /* HeaderView.swift */; };
 		558275E720A51DDE00529EE9 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558275E620A51DDE00529EE9 /* HomeView.xib */; };
 		558275E920A5295700529EE9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558275E820A5295700529EE9 /* HomeView.swift */; };
 		558275F020A53CCF00529EE9 /* HomeViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */; };
@@ -64,6 +66,8 @@
 		5512F79D20A322D200B0CF76 /* FlipboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipboardUITests.swift; sourceTree = "<group>"; };
 		5512F79F20A322D200B0CF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5512F7AB20A3235D00B0CF76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5527431320A942A200265172 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		5527431520A942F100265172 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		558275E620A51DDE00529EE9 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		558275E820A5295700529EE9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
 				5512F77E20A322D100B0CF76 /* Main.storyboard */,
 				559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */,
+				5527431320A942A200265172 /* HeaderView.xib */,
+				5527431520A942F100265172 /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5512F78820A322D200B0CF76 /* LaunchScreen.storyboard in Resources */,
+				5527431420A942A200265172 /* HeaderView.xib in Resources */,
 				558275E720A51DDE00529EE9 /* HomeView.xib in Resources */,
 				558275F620A5ABA700529EE9 /* FiraSansCondensed-Bold.ttf in Resources */,
 				5512F78520A322D200B0CF76 /* Assets.xcassets in Resources */,
@@ -356,6 +363,7 @@
 				559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */,
 				5512F78320A322D100B0CF76 /* Flipboard.xcdatamodeld in Sources */,
 				558275FC20A5B10400529EE9 /* CALayer+Extension.swift in Sources */,
+				5527431620A942F100265172 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

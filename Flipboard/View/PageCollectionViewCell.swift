@@ -8,6 +8,9 @@
 
 import UIKit
 
+// Layout is done on the Xib. Instantiated view is assigned to containerView
+// ** DON'T DELETE THIS!!! **
+
 class PageCollectionViewCell: UICollectionViewCell {
     
   @IBOutlet weak var containerView: UIView!

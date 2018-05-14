@@ -69,6 +69,8 @@ class AnimatedTabBar: UIView {
     })
     
     tabIndicator.backgroundColor = accentRed
+    tabBar.selectedItem = homeButton
+    currentlySelectedIndex = 0
   }
   
   func updateTabIndicator(_ item: UITabBarItem, animated: Bool) {
