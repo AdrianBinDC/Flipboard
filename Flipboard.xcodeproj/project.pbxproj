@@ -27,7 +27,6 @@
 		559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A320A39B9B000011B8 /* DataFactory.swift */; };
 		559B11A620A39BE2000011B8 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A520A39BE2000011B8 /* Int+Extension.swift */; };
 		559B11AA20A3C056000011B8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11A920A3C056000011B8 /* CustomButton.swift */; };
-		559B11AC20A46931000011B8 /* SafeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11AB20A46931000011B8 /* SafeTabBar.swift */; };
 		559B11AE20A4B4F1000011B8 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */; };
 		55A3396420A894B70037254D /* AnimatedTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A3396320A894B70037254D /* AnimatedTabBar.xib */; };
 		55A3396620A894CB0037254D /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3396520A894CB0037254D /* AnimatedTabBar.swift */; };
@@ -78,7 +77,6 @@
 		559B11A320A39B9B000011B8 /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		559B11A520A39BE2000011B8 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		559B11A920A3C056000011B8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		559B11AB20A46931000011B8 /* SafeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTabBar.swift; sourceTree = "<group>"; };
 		559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		55A3396320A894B70037254D /* AnimatedTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedTabBar.xib; sourceTree = "<group>"; };
 		55A3396520A894CB0037254D /* AnimatedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBar.swift; sourceTree = "<group>"; };
@@ -185,15 +183,15 @@
 		559B11A120A39B35000011B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5512F77E20A322D100B0CF76 /* Main.storyboard */,
-				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
-				559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */,
-				558275E620A51DDE00529EE9 /* HomeView.xib */,
-				558275E820A5295700529EE9 /* HomeView.swift */,
-				558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */,
-				558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */,
-				55A3396320A894B70037254D /* AnimatedTabBar.xib */,
 				55A3396520A894CB0037254D /* AnimatedTabBar.swift */,
+				55A3396320A894B70037254D /* AnimatedTabBar.xib */,
+				558275E820A5295700529EE9 /* HomeView.swift */,
+				558275E620A51DDE00529EE9 /* HomeView.xib */,
+				558275EE20A53CCF00529EE9 /* HomeViewTableViewCell.swift */,
+				558275EF20A53CCF00529EE9 /* HomeViewTableViewCell.xib */,
+				5512F78620A322D200B0CF76 /* LaunchScreen.storyboard */,
+				5512F77E20A322D100B0CF76 /* Main.storyboard */,
+				559B11AD20A4B4F1000011B8 /* PageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,11 +199,10 @@
 		559B11A220A39B3F000011B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				558275FB20A5B10400529EE9 /* CALayer+Extension.swift */,
+				559B11A920A3C056000011B8 /* CustomButton.swift */,
 				559B11A320A39B9B000011B8 /* DataFactory.swift */,
 				559B11A520A39BE2000011B8 /* Int+Extension.swift */,
-				559B11A920A3C056000011B8 /* CustomButton.swift */,
-				559B11AB20A46931000011B8 /* SafeTabBar.swift */,
-				558275FB20A5B10400529EE9 /* CALayer+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,7 +354,6 @@
 				559B11AE20A4B4F1000011B8 /* PageCollectionViewCell.swift in Sources */,
 				5512F77B20A322D100B0CF76 /* AppDelegate.swift in Sources */,
 				559B11A420A39B9B000011B8 /* DataFactory.swift in Sources */,
-				559B11AC20A46931000011B8 /* SafeTabBar.swift in Sources */,
 				5512F78320A322D100B0CF76 /* Flipboard.xcdatamodeld in Sources */,
 				558275FC20A5B10400529EE9 /* CALayer+Extension.swift in Sources */,
 			);

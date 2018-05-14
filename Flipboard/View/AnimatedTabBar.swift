@@ -31,13 +31,16 @@ class AnimatedTabBar: UIView {
   
   private var sortedTabViews: [UIView] = []
   
-  private var currentlySelectedIndex: Int = 0
-  
-  var indicatatorWidth: CGFloat {
-    let tabBarItemCount = tabBar.subviews.count
-    return self.bounds.width / CGFloat(tabBarItemCount)
+  private var currentlySelectedIndex: Int = 0 {
+    willSet {
+      sortedTabViews[newValue].isUserInteractionEnabled = false
+    }
+    
+    didSet {
+      sortedTabViews[oldValue].isUserInteractionEnabled = true
+    }
   }
-
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     commonInit()
@@ -64,14 +67,20 @@ class AnimatedTabBar: UIView {
     sortedTabViews = tabBar.subviews.sorted(by: { (view1, view2) -> Bool in
       view1.frame.midX < view2.frame.midX
     })
+    
+    tabIndicator.backgroundColor = accentRed
   }
   
-  func animateTabIndicator(_ item: UITabBarItem) {
+  func updateTabIndicator(_ item: UITabBarItem, animated: Bool) {
     delegate?.scrollToViewIndex(item.tag)
     let newCenterX: CGFloat = sortedTabViews[item.tag].center.x
     let newCenter = CGPoint(x: newCenterX, y: tabIndicator.center.y)
     
-    UIView.animate(withDuration: 0.3) {
+    if animated {
+      UIView.animate(withDuration: 0.3) {
+        self.tabIndicator.center = newCenter
+      }
+    } else {
       self.tabIndicator.center = newCenter
     }
   }
@@ -81,6 +90,6 @@ extension AnimatedTabBar: UITabBarDelegate {
   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     guard item.tag != currentlySelectedIndex else { print("doing nothing"); return }
     currentlySelectedIndex = item.tag
-    animateTabIndicator(item)
+    updateTabIndicator(item, animated: true)
   }
 }
